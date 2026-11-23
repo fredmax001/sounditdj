@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build & release artifacts
+dist/
+frontend/dist/
+electron/dist/
+electron/frontend-dist/
+*.tgz
+*.tgz.sha256
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+backend/.env
+backend/.env.production
+
+# Runtime data, uploads, logs & temp
+backend/uploads/
+backend/temp/
+backend/logs/
+backend/database/*.db
+backend/database/*.sqlite
+*.log
+npm-debug.log*
+.tmp-test/
+
+# Local ops/test scripts & scratch artifacts (contain hardcoded credentials or large binaries)
+/*.py
+/test_*.js
+/test_*.sh
+/test_results.txt
+/largefile.mp3
+/soundit-home.png
+/soundit-https.png
+
+# Editor & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

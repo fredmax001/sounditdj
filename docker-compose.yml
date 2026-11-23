@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  sounditdj-backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sounditdj-backend
+    restart: always
+    environment:
+      - PORT=3001
+      - NODE_ENV=production
+      # JWT_SECRET and API keys are loaded from ./backend/.env.production
+    env_file:
+      - ./backend/.env.production
+    ports:
+      - "3001:3001"
+    volumes:
+      # Map to the server's cloud drive as per KIs
+      - D:\soundit-cloud\apps\sounditdj\database:/app/database
+      - D:\soundit-cloud\apps\sounditdj\uploads:/app/uploads
+      - D:\soundit-cloud\logs\sounditdj:/app/logs
+    networks:
+      - soundit-network
+
+  sounditdj-frontend:
+    image: nginx:alpine
+    container_name: sounditdj-frontend
+    restart: always
+    ports:
+      - "5173:80"
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html
+      # Potential Nginx config for reverse proxy if needed
+      # - ./nginx/frontend.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - soundit-network
+
+networks:
+  soundit-network:
+    external: true
+    name: soundit-network

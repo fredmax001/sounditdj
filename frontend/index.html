@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sound It DJ - Professional DJ Library & Mix Intelligence</title>
+    <meta name="description" content="Import, analyze, and export your music across all DJ platforms. AI-powered mix analysis, visualizer creation, and USB export for CDJs." />
+
+    <style>
+      /* Fallback styles to ensure dark navy brand background loads immediately */
+      html, body {
+        background-color: #00101D !important;
+        color: #e8e8e8 !important;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      #root {
+        min-height: 100vh;
+        background-color: #00101D !important;
+      }
+      
+      /* Premium Initial Brand Loader */
+      .initial-loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #00101D;
+        color: #FAE1AF;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        gap: 20px;
+        user-select: none;
+      }
+
+      .loader-branding {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .loader-emblem {
+        height: 88px;
+        width: auto;
+        object-contain: contain;
+        filter: drop-shadow(0 0 24px rgba(250, 225, 175, 0.4));
+        animation: emblemGlow 2.5s ease-in-out infinite;
+      }
+
+      .loader-wordmark {
+        height: 28px;
+        width: auto;
+        object-contain: contain;
+        opacity: 0.95;
+      }
+
+      .loader-track {
+        width: 150px;
+        height: 3px;
+        background: rgba(250, 225, 175, 0.15);
+        border-radius: 9999px;
+        overflow: hidden;
+        position: relative;
+        margin-top: 8px;
+      }
+
+      .loader-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 45%;
+        background: linear-gradient(90deg, #95CDFB, #FAE1AF);
+        border-radius: 9999px;
+        animation: loaderSlide 1.5s ease-in-out infinite;
+        box-shadow: 0 0 10px rgba(250, 225, 175, 0.6);
+      }
+
+      .loader-text {
+        font-size: 10px;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #FAE1AF;
+        opacity: 0.8;
+        font-family: 'SF Mono', Monaco, 'Roboto Mono', monospace;
+      }
+
+      @keyframes emblemGlow {
+        0%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 16px rgba(250, 225, 175, 0.3));
+        }
+        50% {
+          transform: scale(1.04);
+          filter: drop-shadow(0 0 28px rgba(250, 225, 175, 0.6));
+        }
+      }
+
+      @keyframes loaderSlide {
+        0% {
+          left: -45%;
+        }
+        50% {
+          left: 40%;
+          width: 55%;
+        }
+        100% {
+          left: 100%;
+          width: 45%;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-background-primary text-text-primary antialiased" style="background-color: #00101D !important; color: #e8e8e8 !important;">
+    <div id="root" style="background-color: #00101D !important; min-height: 100vh;">
+      <div class="initial-loader">
+        <div class="loader-branding">
+          <img src="./brandmark.png" alt="Sound It DJ Emblem" class="loader-emblem" />
+          <img src="./logo.png" alt="SOUND IT DJ" class="loader-wordmark" />
+        </div>
+        <div class="loader-track">
+          <div class="loader-bar"></div>
+        </div>
+        <div class="loader-text">Loading Sound It DJ</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

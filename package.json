@@ -1,0 +1,41 @@
+{
+  "name": "fmx-dj",
+  "version": "1.0.0",
+  "description": "Professional DJ Library & Mix Intelligence Platform",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "electron"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "electron": "cd electron && npm run electron",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../electron && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "dj",
+    "music",
+    "audio",
+    "mix",
+    "playlist",
+    "rekordbox",
+    "serato",
+    "traktor"
+  ],
+  "author": "FMX DJ",
+  "license": "MIT",
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "app-builder-bin": "^4.2.0",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  }
+}
